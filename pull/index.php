@@ -1,4 +1,6 @@
 <?php
 	echo "pull and push";
-	echo shell_exec('pull.sh');
+	$ex = shell_exec('pull.sh');
+	echo "git message : ";
+	print($ex);
 ?>
