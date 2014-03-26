@@ -1,3 +1,4 @@
 <?php
-shell_exec('pull.sh');
+	echo "pull and push"
+	echo shell_exec('pull.sh');
 ?>
