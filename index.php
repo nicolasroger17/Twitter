@@ -10,7 +10,13 @@
 	/* Create a TwitterOauth object with consumer/user tokens. */
 	$connection = new TwitterOAuth($consumer_key, $consumer_secret, $oauth_token, $oauth_token_secret);
 
-	$query = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=NOE_interactive&count=1'; //Your Twitter API query
+	$query = 'https://api.twitter.com/1.1/search/tweets.json?q=%2301net&result_type=recent'; //Your Twitter API query
 	$content = $connection->get($query);
-	var_dump($content);
+
+	for($i = 0; $i < count($content); $i++){
+		echo "message ".$i." hastag : ";
+		$pattern = "#\#{1}[0-9a-zA-Z]+#";
+		preg_match_all($pattern, "#nicolas #toto nicolasroger lldosodsdqsdqs #tptp", $matches);
+		var_dump($matches);
+	}
 ?>
