@@ -15,7 +15,7 @@
 
 	for($i = 0; $i < count($content); $i++){
 		echo "message ".$i." hastag : ";
-		$pattern = "#\#{1}[0-9a-zA-Z]+#";
+		$pattern = "#\#{1}[0-9a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-]+#";
 		preg_match_all($pattern, "#nicolas #toto nicolasroger lldosodsdqsdqs #tptp", $matches);
 		var_dump($matches);
 	}
