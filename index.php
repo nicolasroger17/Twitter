@@ -1,5 +1,6 @@
 <h1>Twitter API</h1>
 <?php
+	header('Content-Type: text/html; charset=utf-8');
 	$consumer_key='IWnNQRsCd2JF4p1jHL63Q'; //Provide your application consumer key
 	$consumer_secret='tDVLN26kyGL2F1evaDTIPYpSuiVTEUyJk9fdAA6YWFo'; //Provide your application consumer secret
 	$oauth_token = '2407736024-ye1xkvxwjrebpev7JMav3gs0zNPtsDTrHnLXvsV'; //Provide your oAuth Token
@@ -13,10 +14,14 @@
 	$query = 'https://api.twitter.com/1.1/search/tweets.json?q=%2301net&result_type=recent'; //Your Twitter API query
 	$content = $connection->get($query);
 
-	for($i = 0; $i < count($content); $i++){
-		echo "message ".$i." hastag : ";
+	//var_dump($content);
+	//var_dump($content->statuses[0]->text);
+	//var_dump($content->statuses[0]->user);
+	for($i = 0; $i < count($content->statuses); $i++){
 		$pattern = "#\#{1}[0-9a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-]+#";
-		preg_match_all($pattern, "#nicolas #toto nicolasroger lldosodsdqsdqs #tptp", $matches);
-		var_dump($matches);
+		preg_match_all($pattern, $content->statuses[$i]->text, $matches);
+		print "user : ".$content->statuses[$i]->user->name;
+		var_dump($matches[0]);
+		echo "<br>";
 	}
 ?>
