@@ -21,7 +21,9 @@ class Twitter{
 		for($i = 0; $i < count($content->statuses); $i++){
 			$pattern = "#\#{1}[0-9a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-]+#";
 			preg_match_all($pattern, $content->statuses[$i]->text, $matches);
-			print "user : ".$content->statuses[$i]->user->name;
+			print "user id : ".$content->statuses[$i]->user->id;
+			echo "<br/>";
+			print "user name : ".$content->statuses[$i]->user->name;
 			var_dump($matches[0]);
 			echo "<br>";
 		}
