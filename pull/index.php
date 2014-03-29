@@ -2,7 +2,7 @@
 <div>
 	<?php
 		echo "git message : ";
-		echo shell_exec('sh pull.sh');
+		echo shell_exec('./pull.sh');
 	?>
 </div>
 <p>Good job nicolasroger17</p>
