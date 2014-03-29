@@ -18,6 +18,7 @@ class Twitter{
 	}
 
 	function getInfo($content){
+		var_dump($content);
 		for($i = 0; $i < count($content->statuses); $i++){
 			$pattern = "#\#{1}[0-9a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-]+#";
 			preg_match_all($pattern, $content->statuses[$i]->text, $matches);
