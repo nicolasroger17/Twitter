@@ -4,11 +4,12 @@ class ManageReturnContent{
 	private $content;
 	function __construct($content){
 		$this->content = $content;
-		start();
+		$this->start();
 	}
 
 	function start(){
-		//code
+		print_r($this->content);
+		exit();
 	}
 }
 ?>

@@ -3,8 +3,6 @@
 	header('Content-Type: text/html; charset=utf-8');
 	require_once('twitterStreaming.php');
 	$stream = new TwitterStreaming();
-	$stream->login();
-	$stream->start(array('%2301net'));
 	/*require_once('cassandra.php');
 	new Cassandra();*/
 	/*require_once('twitter.php');
