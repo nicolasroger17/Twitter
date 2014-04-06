@@ -1,7 +1,7 @@
 <?php
-require_once('phirehose/lib/Phirehose.php');
-require_once('phirehose/lib/OauthPhirehose.php');
-require_once('manageReturnContent.php');
+require_once('/twitter/phirehose/lib/Phirehose.php');
+require_once('/twitter/phirehose/lib/OauthPhirehose.php');
+require_once('/twitter/manageReturnContent.php');
 
 /**
  * Example of using Phirehose to display a live filtered stream using track words
