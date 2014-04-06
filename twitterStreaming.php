@@ -56,7 +56,7 @@ class TwitterStreaming
         //while(1)
         for($i =0; $i < 1; $i++)
         {
-            $fp = fsockopen("ssl://stream.twitter.com", 443, $errno, $errstr, 30);
+            $fp = fsockopen("https://stream.twitter.com", 443, $errno, $errstr, 30);
             if (!$fp)
             {
                 echo "ERROR: Twitter Stream Error: failed to open socket";
