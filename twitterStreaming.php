@@ -32,5 +32,5 @@ define('OAUTH_SECRET', '9N6Za5vHB7YGzVs7tG0ujifR0qRwpJyq73tUlCo29VKRn');
 
 // Start streaming
 $sc = new TwitterStreaming(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
-$sc->setTrack(array('%2301Net'));
+$sc->setTrack(array('#TF1'));
 $sc->consume();
