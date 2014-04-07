@@ -176,6 +176,10 @@ abstract class Phirehose
   *
   * @todo Shouldn't really hard-code URL strings in this function.
    */
+
+
+  private static $manager = null;
+
   public function __construct($username, $password, $method = Phirehose::METHOD_SAMPLE, $format = self::FORMAT_JSON, $lang = FALSE)
   {
     $this->username = $username;
@@ -188,6 +192,7 @@ abstract class Phirehose
         case self::METHOD_SITE:$this->URL_BASE = 'https://sitestream.twitter.com/1.1/';break;
         default:break;  //Stick to the default
         }
+    TwitterStreaming::$manager = new ManageReturnContent();
   }
   
   /**

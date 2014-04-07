@@ -8,6 +8,7 @@ require_once(ROOT.DS.'class'.DS.'manageReturnContent.php');
  */
 class TwitterStreaming extends OauthPhirehose
 {
+  static $manager = null;
   /**
    * Enqueue each status
    *
@@ -21,17 +22,15 @@ class TwitterStreaming extends OauthPhirehose
      *       enqueued and processed asyncronously from the collection process.
      */
     $data = json_decode($status, true);
-    //var_dump($data);
-    new ManageReturnContent($data);
+    self::$manager->start($data);
+    
   }
 }
+  define('TWITTER_CONSUMER_KEY', 'IWnNQRsCd2JF4p1jHL63Q');
+  define('TWITTER_CONSUMER_SECRET', 'tDVLN26kyGL2F1evaDTIPYpSuiVTEUyJk9fdAA6YWFo');
+  define('OAUTH_TOKEN', '2407736024-ye1xkvxwjrebpev7JMav3gs0zNPtsDTrHnLXvsV');
+  define('OAUTH_SECRET', '9N6Za5vHB7YGzVs7tG0ujifR0qRwpJyq73tUlCo29VKRn');
 
-define('TWITTER_CONSUMER_KEY', 'IWnNQRsCd2JF4p1jHL63Q');
-define('TWITTER_CONSUMER_SECRET', 'tDVLN26kyGL2F1evaDTIPYpSuiVTEUyJk9fdAA6YWFo');
-define('OAUTH_TOKEN', '2407736024-ye1xkvxwjrebpev7JMav3gs0zNPtsDTrHnLXvsV');
-define('OAUTH_SECRET', '9N6Za5vHB7YGzVs7tG0ujifR0qRwpJyq73tUlCo29VKRn');
-
-// Start streaming
-$sc = new TwitterStreaming(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
-$sc->setTrack(array('#morning'));
-$sc->consume();
+  $sc = new TwitterStreaming(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
+  $sc->setTrack(array('#morning'));
+  $sc->consume();
