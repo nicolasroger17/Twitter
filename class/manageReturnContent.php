@@ -8,8 +8,8 @@ class ManageReturnContent{
 	}
 
 	function start(){
-  		var_dump($this->content);
-  		//var_dump($this->content[description]);
+  		//var_dump($this->content);
+  		var_dump($this->content['description']);
  		exit();
 	}
 
