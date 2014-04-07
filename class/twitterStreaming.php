@@ -21,6 +21,7 @@ class TwitterStreaming extends OauthPhirehose
      *       enqueued and processed asyncronously from the collection process.
      */
     $data = json_decode($status, true);
+    //var_dump($data);
     new ManageReturnContent($data);
   }
 }
