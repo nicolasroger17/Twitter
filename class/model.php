@@ -33,8 +33,8 @@ class Model{
          $req->bindParam(':id', $data['id']);
          $req->bindParam(':date', $data['created_at']);
          $req->bindParam(':text', $data['text']);
-         $req->bindParam(':retweeted', $data['retweeted_count']);
-         $req->bindParam(':favorited', $data['favorited_count']);
+         $req->bindParam(':retweeted', $data['retweet_count']);
+         $req->bindParam(':favorited', $data['favorite_count']);
          $req->execute();
     }
     
