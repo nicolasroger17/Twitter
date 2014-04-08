@@ -2,7 +2,7 @@
 class ManageReturnContent{
     
     private $model;
-    
+
 
     function __construct(){
         require_once(ROOT.DS.'class'.DS.'model.php');
@@ -21,11 +21,8 @@ class ManageReturnContent{
     }
 
     function filter (){
-        $sth = $this->db->prepare('SELECT * 
-                        FROM tweets
-                        ORDER BY retweeted DESC'
-                        );
-        var_dump($sth);
+        $data = $this->model->getInfo();
+        var_dump($data);
     }
     /*$sth = $this->db->prepare('SELECT likes_products.id
                         FROM likes_products

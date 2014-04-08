@@ -33,6 +33,7 @@ class Model{
                         );
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     function insert($data){
