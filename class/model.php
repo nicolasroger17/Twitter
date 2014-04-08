@@ -31,7 +31,7 @@ class Model{
                                     VALUES (:id,:date,:text,:retweeted,:favorited)'
                                 );
          $req->bindParam(':id', $data['id']);
-         $req->bindParam(':date', $data[strtotime('created_at')]);
+         $req->bindParam(':date', $data['created_at']);
          $req->bindParam(':text', $data['text']);
          $req->bindParam(':retweeted', $data['retweet_count']);
          $req->bindParam(':favorited', $data['favorite_count']);

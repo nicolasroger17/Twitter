@@ -31,7 +31,7 @@ class TwitterStreaming extends OauthPhirehose
   define('OAUTH_TOKEN', '2407736024-ye1xkvxwjrebpev7JMav3gs0zNPtsDTrHnLXvsV');
   define('OAUTH_SECRET', '9N6Za5vHB7YGzVs7tG0ujifR0qRwpJyq73tUlCo29VKRn');
 
-  ini_set('max_execution_time', 120);
+  ini_set('max_execution_time', 40);
   $sc = new TwitterStreaming(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
   $sc->setTrack(array('#morning'));
   $sc->consume();
