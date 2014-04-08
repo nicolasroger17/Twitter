@@ -11,13 +11,29 @@ class ManageReturnContent{
     function start($content){
         
         $this->model->insert(array(
-            'created_at' => $content['created_at'], 
+            'created_at' => date( "Y-m-d", strtotime($content['created_at'])),
             'id' => $content['id'], 
             'text' => $content['text'], 
             'favorite_count' => $content['favorite_count'], 
             'retweet_count' => $content['retweet_count']
             ));
     }
+
+    function filter (){
+        $sth = $this->db->prepare('SELECT * 
+                        FROM tweets
+                        ORDER BY retweeted DESC'
+                        );
+        var_dump($sth);
+    }
+    /*$sth = $this->db->prepare('SELECT likes_products.id
+                        FROM likes_products
+                        WHERE likes_products.product_id = :id_product and likes_products.user_id = :user_id'
+                        );
+        $sth->bindParam(':user_id', $user_id);
+        $sth->bindParam(':id_product', $id_product);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);*/
 
 }
 ?>
