@@ -9,7 +9,7 @@ class Model{
                 'host'         => 'localhost',
                 'database'     => 'twitter',
                 'login'        => 'root',
-                'password'     => 'root'
+                'password'     => ''
         );
         try{
             //echo 'mysql:host='.$conf['host'].';dbname='.$conf['database'],$conf['login'],$conf['password'];           

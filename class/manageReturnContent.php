@@ -22,16 +22,7 @@ class ManageReturnContent{
 
     function filter (){
         $data = $this->model->getInfo();
-        var_dump($data);
+        return $data;
     }
-    /*$sth = $this->db->prepare('SELECT likes_products.id
-                        FROM likes_products
-                        WHERE likes_products.product_id = :id_product and likes_products.user_id = :user_id'
-                        );
-        $sth->bindParam(':user_id', $user_id);
-        $sth->bindParam(':id_product', $id_product);
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);*/
-
 }
 ?>
