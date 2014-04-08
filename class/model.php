@@ -26,6 +26,15 @@ class Model{
         }
     }
 
+    function getInfo (){
+        $sth = $this->db->prepare('SELECT * 
+                        FROM tweets
+                        ORDER BY retweeted DESC'
+                        );
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function insert($data){
         $req = $this->db->prepare('INSERT INTO tweets (id, date, text, retweeted, favorited)
                                     VALUES (:id,:date,:text,:retweeted,:favorited)'

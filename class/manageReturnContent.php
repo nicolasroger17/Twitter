@@ -2,6 +2,7 @@
 class ManageReturnContent{
     
     private $model;
+    
 
     function __construct(){
         require_once(ROOT.DS.'class'.DS.'model.php');
