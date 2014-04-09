@@ -192,7 +192,7 @@ abstract class Phirehose
         case self::METHOD_SITE:$this->URL_BASE = 'https://sitestream.twitter.com/1.1/';break;
         default:break;  //Stick to the default
         }
-    TwitterStreaming::$manager = new ManageReturnContent();
+    TwitterStreaming::$manager = new ManageReturnContent('tweets');
   }
   
   /**

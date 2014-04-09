@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Twitter</title>
-	<link rel="stylesheet" type="text/css" href="index.css" /> 
 </head>
 <body>
 <h1>Resultat</h1>
@@ -10,8 +9,9 @@
 	define('ROOT',dirname(__FILE__));
 	header('Content-Type: text/html; charset=utf-8');
 	require_once(ROOT.DS.'class'.DS.'manageReturnContent.php');
-	$manageReturnContent = new ManageReturnContent();
-	$data=$manageReturnContent->filter();
+	$manageReturnContent = new ManageReturnContent('tweets');
+
+	$data = $manageReturnContent->filter();
 	?>
 	<table>
 		<tr>
