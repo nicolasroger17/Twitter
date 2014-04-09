@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>Twitter</title>
+	<link rel="stylesheet" type="text/css" href="index.css" /> 
 </head>
 <body>
 <h1>Resultat</h1>
@@ -10,7 +11,6 @@
 	header('Content-Type: text/html; charset=utf-8');
 	require_once(ROOT.DS.'class'.DS.'manageReturnContent.php');
 	$manageReturnContent = new ManageReturnContent();
-
 	$data=$manageReturnContent->filter();
 	?>
 	<table>
