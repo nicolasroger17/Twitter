@@ -22,9 +22,9 @@ class MongodbModel{
             $count = 1;
             foreach($data as $c){
                 echo "count before : ".$c['count']."<br>";
-                $count = $c['count']++;
+                $count = $c['count'] + 1;
             }
-            echo "count after : ".$count."<br>";
+            echo "count after : ".$count."<br><br>";
             $this->updateTag($tag, $count);
         }
     }
@@ -45,31 +45,9 @@ class MongodbModel{
          $this->db->insert($content);
     }
 
-    /**
-    * Shows tweets information from a find query;
-    **/
-    function showInfos($data){
-        ?>
-            <html>
-            <head>
-                <title></title>
-            </head>
-            <body>
-                <table>
-                <?php
-                    foreach($data as $i){
-                        echo '<tr>';
-                            echo '<td>'.$i['created_at'].'</td>';
-                            echo '<td>'.$i['text'].'</td>';
-                            echo '<td>'.$i['retweeted'].'</td>';
-                            echo '<td>'.$i['favorited'].'</td>';
-                        echo '</tr>';
-                    }
-                ?>
-                </table>
-            </body>
-            </html>
-       <?php
+    function getInfosFromTable($page){
+        $this->db = $this->conBdd->selectCollection('twitter', $page);
+        return $this->db->find();
     }
     
 }
