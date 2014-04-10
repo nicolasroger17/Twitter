@@ -22,7 +22,7 @@ class GetClientInfos{
             return $a['count'] < $b['count'];
         }
         usort($data, 'compareTags');
-        return $data;
+        return $this->createPage($data);
     }
 
     function createTweets($data){
@@ -37,6 +37,44 @@ class GetClientInfos{
                         "</div>".
                      "</div>";
         }
+        return $html;
+    }
+
+    function createPage($data){
+        $html = "";
+        $html .= $this->createChart($data);
+        foreach($data as $tag){
+            $html .= "<div class='tag'>".
+                        "<p class='tagName'>".$tag['tag']."</p>".
+                        "<p class='tagCount'>".$tag['count']."</p>".
+                     "</div>";
+        }
+        return $html;
+    }
+
+    function createChart($data){
+        $i = 0;
+        $html = '<script type="text/javascript">'.
+                'google.load("visualization", "1", {packages:["corechart"]});'.
+                'google.setOnLoadCallback(drawChart);'.
+                'function drawChart() {'.
+                    'var data = google.visualization.arrayToDataTable(['.
+                    '["Tag", "Count"],';
+        foreach($data as $tag){
+            $html .= '["'.$tag['tag'].'", '.$tag['count'].'],';
+            $i++;
+            if($i > 10){
+                break;
+            }
+        }
+        $html .= ']);var options = {'.
+                    'title: "Importance of tag",'.
+                    'legend: { position: "none" }'.
+                    '};'.
+                    'var chart = new google.visualization.Histogram(document.getElementById("chart_div"));'.
+                    'chart.draw(data, options);'.
+                '}'.
+            '</script>';
         return $html;
     }
 }

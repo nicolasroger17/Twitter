@@ -59,3 +59,35 @@ h1{
 	line-height: 30px;
 	margin-bottom: 0;
 }
+.tag{
+	width: 590px;
+	margin: auto;
+	background: white;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.tagName,
+.tagCount{
+	float: left;
+	padding: 0 20px;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 0;
+	height: 50px;
+	color: #0084B4;
+	font-size: 16px;
+}
+.tagCount{
+	width: 60px;
+	color: black;
+}
+.tagName{
+	border-right: 2px solid #CECECE;
+	width: 448px;
+	font-weight: bold;
+}
+#chart_div{
+	width: 1024px;
+	margin: 20px auto;
+}
