@@ -9,33 +9,17 @@
 <html>
 <head>
 	<title>Twitter page : <?php echo $page; ?></title>
+	<link rel="stylesheet" type="text/css" href="/twitter/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/twitter/css/style.css">
 </head>
 <body>
-<h1>Resultats</h1>
-
-
-	var_dump($getClientInfos->infosFromTable($page));
-	exit();
-	?>
-	<table>
-		<tr>
-			<th>Tweet's ID</th>
-			<th>Created at</th>
-			<th>Text</th>
-			<th>Retweeted</th>
-			<th>Favorited</th>
-		</tr>
-		<?php
-			for($i=0; $i<count($data); $i++){
-				echo '<tr>';
-					echo '<td>'.$data[$i]['id'].'</td>';
-					echo '<td>'.$data[$i]['date'].'</td>';
-					echo '<td>'.$data[$i]['text'].'</td>';
-					echo '<td>'.$data[$i]['retweeted'].'</td>';
-					echo '<td>'.$data[$i]['favorited'].'</td>';
-				echo '</tr>';
-			}
-		?>
-	</table>	
+	<h1>Resultats</h1>
+	<div class='container'>
+		<div class='content'>
+			<?php
+				print $getClientInfos->infosFromTable($page);
+			?>
+		</div>
+	</div>
 </body>
 </html>

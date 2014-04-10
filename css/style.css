@@ -1,0 +1,38 @@
+h1{
+	text-align: center;
+}
+body{
+	background-image: url('/twitter/css/bd.png');
+	background-repeat: no-repeat;
+}
+.container{
+	height: 800px;
+	max-height: 800px;
+	overflow: auto;
+}
+.content{
+	width : 1280px;
+	background: #CECECE;
+	margin: auto;
+}
+.tweetContainer{
+	width: 590px;
+	margin: auto;
+}
+.hour{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+}
+.tweet{
+	padding: 10px 20px;
+}
+.bottom{
+	height: 50px;
+}
+.retweet,
+.favorite{
+	float: left;
+	width: 550px;
+	padding: 0 20px;
+}
