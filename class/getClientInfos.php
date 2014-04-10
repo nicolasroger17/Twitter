@@ -32,8 +32,8 @@ class GetClientInfos{
                         "<p class='hour'>".$tweet['created_at']."</p>".
                         "<p class='tweet'>".$tweet['text']."</p>".
                         "<div class='bottom'>".
-                            "<p class='retweet'>".$tweet['retweet_count']."</p>".
-                            "<p class='favorite'>".$tweet['favorite_count']."</p>".
+                            "<p class='retweet'>Retweet ".$tweet['retweet_count']."</p>".
+                            "<p class='favorite'>Favorite ".$tweet['favorite_count']."</p>".
                         "</div>".
                      "</div>";
         }

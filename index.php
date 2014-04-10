@@ -13,8 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="/twitter/css/style.css">
 </head>
 <body>
-	<h1>Resultats</h1>
 	<div class='container'>
+		<h1><?php echo $page; ?></h1>	
 		<div class='content'>
 			<?php
 				print $getClientInfos->infosFromTable($page);

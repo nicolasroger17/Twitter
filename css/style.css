@@ -1,38 +1,61 @@
-h1{
-	text-align: center;
+html{
+	background: rgb(192, 222, 237);
+	margin: 0;
+	padding: 0;
 }
 body{
-	background-image: url('/twitter/css/bd.png');
+	background: none;
 	background-repeat: no-repeat;
+	background-image: url('/twitter/css/bg.png');
+	margin-top: -10px;
+}
+h1{
+	text-align: center;
+	padding-top: 20px;
+	margin-bottom: 20px;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 .container{
-	height: 800px;
-	max-height: 800px;
+	width: 100%;
+	height: 964px;
+	max-height: 964px;
 	overflow: auto;
 }
 .content{
 	width : 1280px;
-	background: #CECECE;
 	margin: auto;
 }
 .tweetContainer{
 	width: 590px;
 	margin: auto;
+	background: white;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border-radius: 5px;
 }
 .hour{
-	height: 50px;
-	line-height: 50px;
+	height: 30px;
+	line-height: 30px;
 	padding-left: 20px;
+	color: #8899a6;
+	margin-bottom: 0;
 }
 .tweet{
 	padding: 10px 20px;
+	font-weight: bold;
+	margin-bottom: 0;
 }
 .bottom{
-	height: 50px;
+	height: 30px;
+	color: #0084B4;
 }
 .retweet,
 .favorite{
 	float: left;
-	width: 550px;
+	width: 255px;
 	padding: 0 20px;
+	text-align: center;
+	line-height: 30px;
+	margin-bottom: 0;
 }
