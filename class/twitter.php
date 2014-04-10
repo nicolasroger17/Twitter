@@ -1,4 +1,9 @@
 <?php
+
+/**
+* This class is not used in the streaming API
+* it is what is left of the utilisation of the REST API
+**/
 class Twitter{
 
 	private $consumer_key='IWnNQRsCd2JF4p1jHL63Q'; //Provide your application consumer key

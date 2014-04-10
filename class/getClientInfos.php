@@ -1,14 +1,26 @@
 <?php
+
+/**
+ * Use the model to get informations from the database
+ * And return element in html to display to the client.
+**/
 class GetClientInfos{
     
+    /**
+    * database object
+    **/
     private $model;
-    public static $pageFollowed = array('@BFMTV', '@RTLFrance', '@canalplus', '@Le_Figaro', '#TF1');
 
     function __construct($table){
         require_once(ROOT.DS.'class'.DS.'Mongodb.php');
         $this->model = new MongodbModel($table);
     }
 
+    /**
+    * ask the right document in the database
+    * and get his informations
+    * @param $table : name of the table
+    **/
     function infosFromTable($table){
         $data = iterator_to_array($this->model->getInfosFromTable($table));
         if($table == 'tweets'){
@@ -25,6 +37,10 @@ class GetClientInfos{
         return $this->createPage($data);
     }
 
+    /**
+    * create a tweet bloc in html
+    * @param $data : data to use
+    **/
     function createTweets($data){
         $html = "";
         foreach($data as $tweet){
@@ -40,6 +56,10 @@ class GetClientInfos{
         return $html;
     }
 
+    /**
+    * create a bloc for an hashtag and his count in html
+    * @param $data : data to use
+    **/
     function createPage($data){
         $html = "";
         $html .= $this->createChart($data);
@@ -52,6 +72,10 @@ class GetClientInfos{
         return $html;
     }
 
+    /**
+    * create the chart using google charts api
+    * @param $data : data to use
+    **/
     function createChart($data){
         $i = 0;
         $html = '<script type="text/javascript">'.
@@ -62,10 +86,6 @@ class GetClientInfos{
                     '["Tag", "Count"],';
         foreach($data as $tag){
             $html .= '["'.$tag['tag'].'", '.$tag['count'].'],';
-            /*$i++;
-            if($i > 10){
-                break;
-            }*/
         }
         $html .= ']);var options = {'.
                     'title: "Importance of tag",'.
