@@ -62,14 +62,18 @@ class GetClientInfos{
                     '["Tag", "Count"],';
         foreach($data as $tag){
             $html .= '["'.$tag['tag'].'", '.$tag['count'].'],';
-            $i++;
+            /*$i++;
             if($i > 10){
                 break;
-            }
+            }*/
         }
         $html .= ']);var options = {'.
                     'title: "Importance of tag",'.
-                    'legend: { position: "none" }'.
+                    'legend: { position: "none" },'.
+                    'histogram: {bucketSize: 1},'.
+                    'chartArea: {height: 400},'.
+                    'height: 500,'.
+                    'width: 1200,'.
                     '};'.
                     'var chart = new google.visualization.Histogram(document.getElementById("chart_div"));'.
                     'chart.draw(data, options);'.
